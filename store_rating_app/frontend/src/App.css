@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: Add a smooth transition for all interactions */
+* {
+  @apply transition-all duration-200;
+}
