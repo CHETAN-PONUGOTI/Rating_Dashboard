@@ -46,3 +46,19 @@ exports.addStore = async (req, res) => {
     res.status(400).json({ error: err.message });
   }
 };
+
+exports.addStore = async (req, res) => {
+  try {
+    const { name, email, address } = req.body;
+    
+    // Validate input requirements
+    if (name.length < 1 || name.length > 60) {
+      return res.status(400).json({ error: "Store name must be between 1 and 60 characters." });
+    }
+
+    const store = await Store.create({ name, email, address });
+    res.status(201).json(store);
+  } catch (err) {
+    res.status(400).json({ error: "Store email must be unique and valid." });
+  }
+};
