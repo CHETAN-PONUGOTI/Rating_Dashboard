@@ -2,3 +2,6 @@
 .env
 .env.local
 .env.*.local
+
+# ignore node_modules
+node_modules/
